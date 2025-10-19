@@ -1,0 +1,27 @@
+name: ${project.artifactId}
+version: ${project.version}
+main: com.magemount.MageMount
+api-version: 1.20
+author: Robobrt
+description: Allows players to magically ride any mob. Folia-compatible.
+folia-supported: true
+
+permissions:
+  magemount.pets:
+    description: "Позволяет оседлать мобов и животных."
+    default: op
+  magemount.player:
+    description: "Позволяет оседлать других игроков."
+    default: op
+  magemount.admin: # Главный админский пермишен
+    description: "Доступ к админским командам MageMount."
+    default: op
+    children:
+      magemount.admin.reload: true
+      magemount.admin.uses: true
+
+commands:
+  magemount:
+    description: "Основная команда плагина MageMount."
+    usage: "/magemount <reload|uses>"
+    aliases: [mmount]
